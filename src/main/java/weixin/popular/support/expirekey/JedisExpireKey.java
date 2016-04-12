@@ -1,3 +1,6 @@
+/*
+//因项目中没有使用到redis,故去掉 seven-cm 20160412
+
 package weixin.popular.support.expirekey;
 
 import redis.clients.jedis.Jedis;
@@ -55,3 +58,4 @@ public class JedisExpireKey implements ExpireKey{
 	}
 
 }
+*/
