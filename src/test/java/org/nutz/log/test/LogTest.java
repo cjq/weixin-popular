@@ -5,11 +5,21 @@ import org.nutz.log.Log;
 import org.nutz.log.Logs;
 
 public class LogTest {
+	Log log = Logs.get();
 
 	@Test
 	public void testLog(){
-		Log log = Logs.get();
+		
 		log.info("hhhhhhhhhhh");
 	}
+	
+	
+	@Test
+	public void testLog2(){
+		//for(int i=0;i<100000;i++){
+			log.infof("%s,%s,%d","132456","456789",0);
+	//	}
+	}
+	
 	
 }

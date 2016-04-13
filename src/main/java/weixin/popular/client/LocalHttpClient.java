@@ -17,8 +17,12 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.nutz.log.Log;
+import org.nutz.log.Logs;
 
 public class LocalHttpClient {
+	
+	private static final Log log = Logs.get();
 	
 	private static int timeout = 5000;
 	
@@ -67,15 +71,20 @@ public class LocalHttpClient {
 			 CloseableHttpClient httpClient = HttpClientFactory.createKeyMaterialHttpClient(keyStore, mch_id,timeout,retryExecutionCount);
 			 httpClient_mchKeyStore.put(mch_id, httpClient);
 		} catch (KeyStoreException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (CertificateException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 	}
 
@@ -84,9 +93,11 @@ public class LocalHttpClient {
 		try {
 			return httpClient.execute(request,HttpClientContext.create());
 		} catch (ClientProtocolException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 		return null;
 	}
@@ -95,9 +106,11 @@ public class LocalHttpClient {
 		try {
 			return httpClient.execute(request, responseHandler,HttpClientContext.create());
 		} catch (ClientProtocolException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 		return null;
 	}
@@ -133,9 +146,11 @@ public class LocalHttpClient {
 		try {
 			return httpClient_mchKeyStore.get(mch_id).execute(request,XmlResponseHandler.createResponseHandler(clazz),HttpClientContext.create());
 		} catch (ClientProtocolException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 		return null;
 	}

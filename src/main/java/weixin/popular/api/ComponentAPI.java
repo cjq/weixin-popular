@@ -7,6 +7,8 @@ import java.nio.charset.Charset;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.entity.StringEntity;
+import org.nutz.log.Log;
+import org.nutz.log.Logs;
 
 import weixin.popular.bean.BaseResult;
 import weixin.popular.bean.component.ApiGetAuthorizerInfoResult;
@@ -24,6 +26,8 @@ import weixin.popular.client.LocalHttpClient;
  */
 public class ComponentAPI extends BaseAPI{
 	
+	private static final Log log = Logs.get();
+	
 	/**
 	 * 生成授权页 URL 
 	 * @param component_appid
@@ -40,7 +44,8 @@ public class ComponentAPI extends BaseAPI{
 			.append("&redirect_uri=").append(URLEncoder.encode(redirect_uri, "utf-8"));
 			return sb.toString();
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			log.info("-componentloginpage-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 		return null;
 	}

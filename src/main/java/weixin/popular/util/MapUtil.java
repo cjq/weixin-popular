@@ -12,7 +12,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.nutz.log.Log;
+import org.nutz.log.Logs;
+
 public class MapUtil {
+	
+	private static final Log log  = Logs.get();
 
 	/**
 	 * Map key 排序
@@ -65,9 +70,11 @@ public class MapUtil {
 				try {
 					o = f.get(object);
 				} catch (IllegalArgumentException e) {
-					e.printStackTrace();
+					log.info("-error-"+e.getMessage(),e);
+					log.info("-error-"+e.getMessage(),e);
 				} catch (IllegalAccessException e) {
-					e.printStackTrace();
+					log.info("-error-"+e.getMessage(),e);
+					log.info("-error-"+e.getMessage(),e);
 				}
 				tempMap.put(f.getName(), o==null?"":o.toString());
 			}
@@ -111,7 +118,8 @@ public class MapUtil {
 								 .append(valueUrlencode?URLEncoder.encode(map.get(key),"utf-8").replace("+", "%20"):map.get(key))
 								 .append("&");
 				} catch (UnsupportedEncodingException e) {
-					e.printStackTrace();
+					log.info("-error-"+e.getMessage(),e);
+					log.info("-error-"+e.getMessage(),e);
 				}
 			}
 		}

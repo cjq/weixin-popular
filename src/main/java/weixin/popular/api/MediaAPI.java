@@ -20,6 +20,8 @@ import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.nutz.log.Log;
+import org.nutz.log.Logs;
 
 import weixin.popular.bean.media.Media;
 import weixin.popular.bean.media.MediaType;
@@ -28,6 +30,8 @@ import weixin.popular.client.LocalHttpClient;
 import weixin.popular.util.StreamUtils;
 
 public class MediaAPI extends BaseAPI{
+	
+	private static final Log log = Logs.get();
 
 	/**
 	 * 新增临时素材
@@ -108,18 +112,23 @@ public class MediaAPI extends BaseAPI{
 			httpPost.setEntity(reqEntity);
 			return LocalHttpClient.executeJsonResult(httpPost,Media.class);
 		} catch (UnsupportedCharsetException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (ClientProtocolException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} finally{
 			try {
 				tempHttpClient.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				log.info("-error-"+e.getMessage(),e);
+				log.info("-error-"+e.getMessage(),e);
 			}
 		}
 		return null;
@@ -142,12 +151,14 @@ public class MediaAPI extends BaseAPI{
 		try {
 			return EntityUtils.toByteArray(httpResponse.getEntity());
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} finally {
 			try {
 				httpResponse.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				log.info("-error-"+e.getMessage(),e);
+				log.info("-error-"+e.getMessage(),e);
 			}
 		}
 		return null;
@@ -185,7 +196,8 @@ public class MediaAPI extends BaseAPI{
 		try {
 			data = StreamUtils.copyToByteArray(inputStream);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 		HttpEntity reqEntity = MultipartEntityBuilder.create()
 				 .addBinaryBody("media",data,ContentType.DEFAULT_BINARY,"temp.jpg")
@@ -215,18 +227,23 @@ public class MediaAPI extends BaseAPI{
 			httpPost.setEntity(reqEntity);
 			return LocalHttpClient.executeJsonResult(httpPost,UploadimgResult.class);
 		} catch (UnsupportedCharsetException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (ClientProtocolException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (ParseException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} finally{
 			try {
 				tempHttpClient.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				log.info("-error-"+e.getMessage(),e);
+				log.info("-error-"+e.getMessage(),e);
 			}
 		}
 		return null;

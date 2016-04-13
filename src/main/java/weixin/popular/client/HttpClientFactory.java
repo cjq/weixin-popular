@@ -24,6 +24,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.protocol.HttpContext;
+import org.nutz.log.Log;
+import org.nutz.log.Logs;
 
 /**
  * httpclient 4.3.x
@@ -31,6 +33,8 @@ import org.apache.http.protocol.HttpContext;
  *
  */
 public class HttpClientFactory{
+	
+	private static final Log log = Logs.get();
 	
 	private static final String[] supportedProtocols = new String[]{"TLSv1"};
 	
@@ -61,9 +65,11 @@ public class HttpClientFactory{
 									.setRetryHandler(new HttpRequestRetryHandlerImpl(retryExecutionCount))
 									.build();
 		} catch (KeyManagementException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 		return null;
 	}
@@ -97,13 +103,17 @@ public class HttpClientFactory{
 									.setRetryHandler(new HttpRequestRetryHandlerImpl(retryExecutionCount))
 									.build();
 		} catch (KeyManagementException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (UnrecoverableKeyException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (KeyStoreException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 		return null;
 	}

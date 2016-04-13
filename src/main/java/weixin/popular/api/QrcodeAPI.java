@@ -12,6 +12,8 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.util.EntityUtils;
+import org.nutz.log.Log;
+import org.nutz.log.Logs;
 
 import weixin.popular.bean.qrcode.QrcodeTicket;
 import weixin.popular.client.LocalHttpClient;
@@ -22,6 +24,8 @@ import weixin.popular.client.LocalHttpClient;
  *
  */
 public class QrcodeAPI extends BaseAPI{
+	
+	private static final Log log = Logs.get();
 
 
 	/**
@@ -89,12 +93,14 @@ public class QrcodeAPI extends BaseAPI{
 			byte[] bytes = EntityUtils.toByteArray(httpResponse.getEntity());
 			return ImageIO.read(new ByteArrayInputStream(bytes));
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} finally {
 			try {
 				httpResponse.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				log.info("-error-"+e.getMessage(),e);
+				log.info("-error-"+e.getMessage(),e);
 			}
 		}
 		return null;

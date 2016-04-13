@@ -19,6 +19,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.nutz.log.Log;
+import org.nutz.log.Logs;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -35,6 +37,8 @@ import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
  *
  */
 public class XMLConverUtil{
+	
+	private static final Log log = Logs.get();
 
 	private static final ThreadLocal<Map<Class<?>,Marshaller>> mMapLocal = new ThreadLocal<Map<Class<?>,Marshaller>>() {
 		@Override
@@ -90,7 +94,8 @@ public class XMLConverUtil{
 			}
 			return (T) uMap.get(clazz).unmarshal(reader);
 		} catch (JAXBException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 		return null;
 	}
@@ -117,7 +122,8 @@ public class XMLConverUtil{
 			mMap.get(object.getClass()).marshal(object,stringWriter);
 			return stringWriter.getBuffer().toString();
 		} catch (JAXBException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 		return null;
 	}
@@ -149,13 +155,17 @@ public class XMLConverUtil{
 				}
 			}
 		} catch (DOMException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (SAXException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 		}
 		return map;
 	}

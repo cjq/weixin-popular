@@ -5,10 +5,15 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
+import org.nutz.log.Log;
+import org.nutz.log.Logs;
+
 import com.qq.weixin.mp.aes.AesException;
 import com.qq.weixin.mp.aes.WXBizMsgCrypt;
 
 public abstract class XMLMessage {
+	
+	private static final Log log = Logs.get();
 
 	private String toUserName;
 	private String fromUserName;
@@ -44,10 +49,12 @@ public abstract class XMLMessage {
 			outputStream.write(toXML().getBytes("utf-8"));
 			outputStream.flush();
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 			return false;
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.info("-error-"+e.getMessage(),e);
+			log.info("-error-"+e.getMessage(),e);
 			return false;
 		}
 		return true;
@@ -60,13 +67,16 @@ public abstract class XMLMessage {
 				outputStream.write(outputStr.getBytes("utf-8"));
 				outputStream.flush();
 			} catch (UnsupportedEncodingException e) {
-				e.printStackTrace();
+				log.info("-error-"+e.getMessage(),e);
+				log.info("-error-"+e.getMessage(),e);
 				return false;
 			} catch (IOException e) {
-				e.printStackTrace();
+				log.info("-error-"+e.getMessage(),e);
+				log.info("-error-"+e.getMessage(),e);
 				return false;
 			} catch (AesException e) {
-				e.printStackTrace();
+				log.info("-error-"+e.getMessage(),e);
+				log.info("-error-"+e.getMessage(),e);
 				return false;
 			}
 			return true;
