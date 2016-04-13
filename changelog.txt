@@ -1,4 +1,12 @@
 WEIXIN-POPULAR CHANGELOG
+============================
+fork from https://github.com/liyiorg/weixin-popular
+
+Changes in version 2.6.1 (2016-04-13)
+-------------------------------------
+* 增加nutz log日志工具类
+* 去掉redis依赖
+
 ===========================
 https://github.com/liyiorg/weixin-popular
 
