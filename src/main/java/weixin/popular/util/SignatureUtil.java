@@ -170,5 +170,16 @@ public class SignatureUtil {
 	public static boolean validateSign(Map<String,String> map,String key){
 		return map.get("sign").equals(generateSign(map,key));
 	}
+	
+	/**
+	 * 微信js分享签名
+	 * @param jsShareMap
+	 * @return
+	 */
+	public static String jsShareSignature(Map<String,String> jsShareMap){
+		Map<String, String> tmap = MapUtil.order(jsShareMap);
+		String str = MapUtil.mapJoin(tmap,true,false);
+		return DigestUtils.shaHex(str);
+	}
 
 }
