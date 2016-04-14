@@ -12,8 +12,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.nutz.log.Log;
-import org.nutz.log.Logs;
+import third.org.nutz.log.Log;
+import third.org.nutz.log.Logs;
 
 public class MapUtil {
 	

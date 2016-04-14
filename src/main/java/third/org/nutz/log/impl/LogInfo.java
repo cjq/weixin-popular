@@ -1,4 +1,4 @@
-package org.nutz.log.impl;
+package third.org.nutz.log.impl;
 /**
  *
  * @author wendal

@@ -1,9 +1,9 @@
-package org.nutz.plugin;
+package third.org.nutz.plugin;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.nutz.lang.Lang;
+import third.org.nutz.lang.Lang;
 
 
 /**

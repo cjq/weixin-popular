@@ -1,4 +1,4 @@
-package org.nutz.plugin;
+package third.org.nutz.plugin;
 import java.util.List;
 
 public interface PluginManager<T> {

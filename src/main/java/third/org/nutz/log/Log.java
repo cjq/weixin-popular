@@ -1,4 +1,4 @@
-package org.nutz.log;
+package third.org.nutz.log;
 /**
  * 日志接口
  * 

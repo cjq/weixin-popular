@@ -1,4 +1,4 @@
-package org.nutz.plugin;
+package third.org.nutz.plugin;
 /**
  * 插件 -- 一个通用的扩展点
  * 

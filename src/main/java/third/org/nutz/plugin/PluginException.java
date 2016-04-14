@@ -1,4 +1,4 @@
-package org.nutz.plugin;
+package third.org.nutz.plugin;
 @SuppressWarnings("serial")
 public class PluginException extends RuntimeException {
 

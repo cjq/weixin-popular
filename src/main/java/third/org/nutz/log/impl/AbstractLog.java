@@ -1,8 +1,8 @@
-package org.nutz.log.impl;
+package third.org.nutz.log.impl;
 
 import java.util.Arrays;
 
-import org.nutz.log.Log;
+import third.org.nutz.log.Log;
 
 public abstract class AbstractLog implements Log {
 

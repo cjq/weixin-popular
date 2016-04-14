@@ -22,9 +22,9 @@ import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.nutz.log.Log;
-import org.nutz.log.Logs;
 
+import third.org.nutz.log.Log;
+import third.org.nutz.log.Logs;
 import weixin.popular.bean.BaseResult;
 import weixin.popular.bean.material.Description;
 import weixin.popular.bean.material.MaterialBatchgetResult;

@@ -24,8 +24,9 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.protocol.HttpContext;
-import org.nutz.log.Log;
-import org.nutz.log.Logs;
+
+import third.org.nutz.log.Log;
+import third.org.nutz.log.Logs;
 
 /**
  * httpclient 4.3.x

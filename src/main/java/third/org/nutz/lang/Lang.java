@@ -1,4 +1,4 @@
-package org.nutz.lang;
+package third.org.nutz.lang;
 
 public abstract class Lang {
     /**

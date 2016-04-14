@@ -5,8 +5,8 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
-import org.nutz.log.Log;
-import org.nutz.log.Logs;
+import third.org.nutz.log.Log;
+import third.org.nutz.log.Logs;
 
 import com.qq.weixin.mp.aes.AesException;
 import com.qq.weixin.mp.aes.WXBizMsgCrypt;

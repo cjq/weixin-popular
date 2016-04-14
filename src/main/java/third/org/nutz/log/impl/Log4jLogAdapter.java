@@ -1,9 +1,10 @@
-package org.nutz.log.impl;
+package third.org.nutz.log.impl;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.nutz.log.Log;
-import org.nutz.log.LogAdapter;
-import org.nutz.plugin.Plugin;
+
+import third.org.nutz.log.Log;
+import third.org.nutz.log.LogAdapter;
+import third.org.nutz.plugin.Plugin;
 
 /**
  * Apache log4j 适配器

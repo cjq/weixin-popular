@@ -1,6 +1,6 @@
-package org.nutz.log;
+package third.org.nutz.log;
 
-import org.nutz.plugin.SimplePluginManager;
+import third.org.nutz.plugin.SimplePluginManager;
 
 public final class Logs {
 	

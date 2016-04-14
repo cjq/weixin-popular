@@ -19,8 +19,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.nutz.log.Log;
-import org.nutz.log.Logs;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -28,6 +26,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+
+import third.org.nutz.log.Log;
+import third.org.nutz.log.Logs;
 
 import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
 

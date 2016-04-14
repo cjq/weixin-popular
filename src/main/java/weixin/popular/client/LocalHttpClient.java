@@ -17,8 +17,9 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.nutz.log.Log;
-import org.nutz.log.Logs;
+
+import third.org.nutz.log.Log;
+import third.org.nutz.log.Logs;
 
 public class LocalHttpClient {
 	

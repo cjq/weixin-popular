@@ -1,3 +1,3 @@
-package org.nutz.plugin;
+package third.org.nutz.plugin;
 @SuppressWarnings("serial")
 public class NoPluginCanWorkException extends RuntimeException {}
