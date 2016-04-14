@@ -77,11 +77,12 @@ public class TokenManager{
 		if(futureMap.containsKey(appid)){
 			futureMap.get(appid).cancel(true);
 		}
+		
 		ScheduledFuture<?> scheduledFuture =  scheduledExecutorService.scheduleWithFixedDelay(new Runnable() {
 			@Override
 			public void run() {
 				Token token = TokenAPI.token(appid,secret);
-				log.debugf("-init-access-token-appid=%s token=%s", appid,token.getAccess_token());
+				log.errorf("-init-access-token-appid=%s token=%s error=%s errorcode=%s", appid,token.getAccess_token(),token.getErrmsg(), token.getErrcode());
 				tokenMap.put(appid,token.getAccess_token());
 			}
 		},0,118,TimeUnit.MINUTES);

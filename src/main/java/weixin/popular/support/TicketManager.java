@@ -94,7 +94,7 @@ public class TicketManager {
 			public void run() {
 				String access_token = TokenManager.getToken(appid);
 				Ticket ticket = TicketAPI.ticketGetticket(access_token);
-				log.debugf("-init-tick-token-appid=%s tick=%s", appid,ticket.getTicket());
+				log.errorf("-init-ticket-appid=%s token=%s error=%s errorcode=%s", appid,ticket.getTicket(),ticket.getErrmsg(), ticket.getErrcode());
 				ticketMap.put(appid,ticket.getTicket());
 			}
 		},initialDelay,delay,TimeUnit.SECONDS);
