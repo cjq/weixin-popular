@@ -9,6 +9,8 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
+import third.org.nutz.log.Log;
+import third.org.nutz.log.Logs;
 import weixin.popular.api.TokenAPI;
 import weixin.popular.bean.token.Token;
 
@@ -18,6 +20,8 @@ import weixin.popular.bean.token.Token;
  *
  */
 public class TokenManager{
+	
+	private static final Log log = Logs.get();
 
 	private static ScheduledExecutorService scheduledExecutorService;
 
@@ -77,6 +81,7 @@ public class TokenManager{
 			@Override
 			public void run() {
 				Token token = TokenAPI.token(appid,secret);
+				log.debugf("-init-access-token-appid=%s token=%s", appid,token.getAccess_token());
 				tokenMap.put(appid,token.getAccess_token());
 			}
 		},0,118,TimeUnit.MINUTES);

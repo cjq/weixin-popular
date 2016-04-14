@@ -9,6 +9,8 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
+import third.org.nutz.log.Log;
+import third.org.nutz.log.Logs;
 import weixin.popular.api.TicketAPI;
 import weixin.popular.bean.ticket.Ticket;
 
@@ -19,6 +21,8 @@ import weixin.popular.bean.ticket.Ticket;
  */
 public class TicketManager {
 
+	private static final Log log = Logs.get();
+	
 	private static ScheduledExecutorService scheduledExecutorService;
 
 	private static Map<String,String> ticketMap = new LinkedHashMap<String,String>();
@@ -90,6 +94,7 @@ public class TicketManager {
 			public void run() {
 				String access_token = TokenManager.getToken(appid);
 				Ticket ticket = TicketAPI.ticketGetticket(access_token);
+				log.debugf("-init-tick-token-appid=%s tick=%s", appid,ticket.getTicket());
 				ticketMap.put(appid,ticket.getTicket());
 			}
 		},initialDelay,delay,TimeUnit.SECONDS);
